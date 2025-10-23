@@ -35,8 +35,8 @@ Permite criar, editar, concluir e excluir tarefas, oferecendo uma interface intu
    
 2. **Crie e ative um ambiente virtual:**
 
-```python -m venv venv
-source venv/bin/activate  # no Windows: venv\Scripts\activate```
+   ```python -m venv venv
+   source venv/bin/activate  # no Windows: venv\Scripts\activate```
 
 3. **Instale as dependências:**
 
@@ -45,8 +45,8 @@ source venv/bin/activate  # no Windows: venv\Scripts\activate```
 
 4. **Execute as migrações e inicie o servidor:**
 
-```python manage.py migrate
-python manage.py runserver```
+   ```python manage.py migrate
+   python manage.py runserver```
 
 
 5. **Acesse no navegador:**
