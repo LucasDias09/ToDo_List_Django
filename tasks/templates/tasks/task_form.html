@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Form</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  </head>
+  <body>
+    <h1>Create/Edit Task</h1>
+    <div class="form-task">
+      <form method="post">
+        {% csrf_token %}
+        <!-- This is a CSRF token for security the
+         objective is to prevent cross-site request forgery attacks csrf_tokens its stands for Cross-Site Request Forgery tokens -->
+        {{ form.as_p }}
+        <div class="btn">
+          <button type="submit" class="create-task-btn">Save</button>
+          <a href="{% url 'task_list' %}" class="return-btn"
+            >Back to Task List</a
+          >
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

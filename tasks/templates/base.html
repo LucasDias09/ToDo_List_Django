@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}To-Do List Django{% endblock title %}</title>
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <script src="{% static 'js/main.js' %}"></script>
+    {% block extra_head %}{% endblock extra_head %}
+  </head>
+  <body>
+    <body>
+      <header class="main-header">
+        <div class="container header-content">
+          <h1>TaskPilot</h1>
+          <nav class="main-nav">
+            {% block nav %}
+            <a href="{% url 'task_list' %}" class="nav-link"
+              >Lista de Tarefas</a
+            >
+
+            <a href="{% url 'contact_page' %}" class="nav-link"> Contactos </a>
+            <a href="{% url 'messages' %}" class="nav-link">Mensagens</a>
+
+            <a href="/admin/" class="nav-link">Admin</a>
+            {% endblock nav %}
+          </nav>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <div class="container">{% block content %} {% endblock content %}</div>
+      </main>
+
+      <footer class="main-footer">
+        <div class="container">
+          {% block footer %}
+          <p>&copy; 2025 ToDo_List_Django Project. By Lucas Dias</p>
+          {% endblock footer %}
+        </div>
+      </footer>
+    </body>
+  </body>
+</html>

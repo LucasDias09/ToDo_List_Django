@@ -1,0 +1,399 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+/* GERAIS E RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f7f6;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ------------------------------------- */
+/* HEADER & NAVIGATION (Elementos Reutilizáveis) */
+/* ------------------------------------- */
+
+.main-header {
+  background-color: #5160b4; /* Azul Índigo (Cor Primária) */
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Sombra suave */
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between; /* Espaça o título do menu */
+  align-items: center;
+  padding: 15px 0;
+}
+
+/* Estilo do Título (Site Title) */
+.site-title a {
+  font-size: 1.8em;
+  font-weight: 700;
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s;
+}
+.site-title a:hover {
+  color: #ff9800; /* Destaque no hover */
+}
+
+/* Estilo da Navegação */
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
+.main-nav .nav-link {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 25px; /* Espaçamento entre os links */
+  padding: 8px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.main-nav .nav-link:hover:not(.cta-button) {
+  background-color: rgba(255, 255, 255, 0.15); /* Fundo claro no hover */
+}
+
+/* Estilo para o Botão de Chamada para Ação (CTA) */
+.cta-button {
+  background-color: #ff9800 !important; /* Laranja (Cor de Destaque) */
+  color: #333 !important;
+  font-weight: bold !important;
+  padding: 8px 15px !important;
+  border: 2px solid transparent;
+}
+
+.cta-button:hover {
+  background-color: #fb8c00 !important;
+  transform: translateY(-1px); /* Pequeno efeito 3D */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* ------------------------------------- */
+/* MAIN CONTENT & TASK LIST */
+/* ------------------------------------- */
+
+.main-content {
+  padding: 40px 0;
+  min-height: 70vh; /* Garante que o footer fica em baixo */
+}
+
+/* Título da Lista e Botão de Ação */
+.header-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 15px;
+}
+
+.create-task-btn {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #4caf50; /* Cor de sucesso */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.create-task-btn:hover {
+  background-color: #43a047;
+}
+
+/* Tabela de Tarefas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  margin-top: 20px;
+}
+
+thead th {
+  background-color: #e0e0e0;
+  padding: 12px;
+  text-align: left;
+  font-weight: bold;
+  color: #555;
+}
+
+tbody td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.description {
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Ações (Editar/Eliminar) */
+.action-btn {
+  text-decoration: none;
+  padding: 5px 8px;
+  border-radius: 3px;
+  margin-right: 5px;
+  font-size: 0.9em;
+}
+
+.edit-btn {
+  background-color: #2196f3;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Mensagem Sem Tarefas */
+.no-tasks {
+  text-align: center;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-top: 20px;
+}
+.no-tasks a {
+  color: #5160b4;
+  font-weight: bold;
+}
+
+/* ------------------------------------- */
+/* FOOTER (Elemento Reutilizável) */
+/* ------------------------------------- */
+
+.main-footer {
+  background-color: #5160b4;
+  color: #ccc;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.9em;
+}
+h1 {
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px;
+  background-origin: padding-box;
+  background-clip: padding-box;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.container-task-details {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.return-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+.return-btn:hover {
+  background-color: #0056b3;
+}
+
+.create-task-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: #28a745;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+.create-task-btn:hover {
+  background-color: #218838;
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+thead th {
+  background-color: #f8f9fa;
+  color: #495057;
+  font-weight: bold;
+  text-align: left;
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+tbody td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  color: #333;
+}
+
+tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+td a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+td a:hover {
+  text-decoration: underline;
+}
+
+td:last-child a {
+  margin-left: 15px;
+}
+.description {
+  margin-left: 25px;
+  color: #555;
+  font-size: 14px;
+}
+.btn-edit-delete {
+  float: right; /* This class is no longer used but keeping for reference if needed elsewhere */
+}
+
+/* Form Styles */
+.form-task {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 15px;
+}
+/* contacts page */
+.container-contact-page {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+ul.contact-info {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+li.email {
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: bold;
+}
+li.phone {
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: bold;
+}
+li.address {
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Success Message */
+.contact-form-container .success-message {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+.contact-form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form-container label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.contact-form-container input,
+.contact-form-container textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+.contact-form-container textarea {
+  height: 100px;
+}
+.contact-form-container button[type="submit"] {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.contact-form-container button[type="submit"]:hover {
+  background-color: #45a049;
+}
+.contact-form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.contact-form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,61 @@
+{% extends "base.html" %}{% load static %} {% load i18n %} {% block title %}
+Lista de Tarefas {% endblock title %} {% block content %}
+
+<div class="header-actions">
+  <h1>Lista de Tarefas</h1>
+  <a href="{% url 'task_create' %}" class="create-task-btn">
+    Criar Nova Tarefa
+  </a>
+</div>
+
+{% if tarefas %}
+<div class="container">
+  <table>
+    <thead>
+      <tr>
+        <th>Status</th>
+        <th>Título</th>
+        <th>Descrição</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for tarefa in tarefas %}
+      <tr
+        class="draggable"
+        draggable="true"
+        data-id="{{ tarefa.pk }}"
+        data-ordem="{{ forloop.counter0 }}"
+      >
+        <td data-label="Status">
+          <input type="checkbox" {% if tarefa.completa %}checked{% endif %} />
+        </td>
+        <td data-label="Título">
+          <a href="{% url 'task_detail' tarefa.pk %}">{{ tarefa.titulo }}</a>
+        </td>
+        <td class="description" data-label="Descrição">
+          {{ tarefa.descricao }}
+        </td>
+        <td data-label="Ações">
+          <a
+            href="{% url 'task_update' tarefa.pk %}"
+            class="action-btn edit-btn"
+            >Editar</a
+          >
+          <a
+            href="{% url 'task_delete' tarefa.pk %}"
+            class="action-btn delete-btn"
+            >Eliminar</a
+          >
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% else %}
+<p class="no-tasks">
+  Ainda não há tarefas.
+  <a href="{% url 'task_create' %}">Comece por criar uma!</a>
+</p>
+{% endif %} {% endblock content %}

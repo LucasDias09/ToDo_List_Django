@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Details</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  </head>
+  <body>
+    <div class="container-task-details">
+      <h1>Task Details</h1>
+      <p><strong>Title:</strong> {{ tarefa.titulo }}</p>
+      <p><strong>Description:</strong> {{ tarefa.descricao }}</p>
+      <p><strong>Completed:</strong> {{ tarefa.concluida }}</p>
+      <a class="return-btn" href="{% url 'task_list' %}">Back to Task List</a>
+    </div>  
+  </body>
+</html>
