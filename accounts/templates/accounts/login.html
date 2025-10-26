@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Iniciar Sessão{% endblock title %}
+
+{% block content %}
+<div class="auth-card">
+    <h2>Iniciar Sessão</h2>
+    <form method="post">
+        {% csrf_token %}
+        <!-- Este ciclo renderiza automaticamente os campos do formulário (username e password) -->
+        {% for field in form %}
+            <div class="form-group">
+                {{ field.label_tag }}
+                {{ field }}
+                {% if field.errors %}
+                    <p class="error-text">{{ field.errors|striptags }}</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+        <button type="submit" class="submit-btn">Entrar</button>
+    </form>
+    <p class="auth-link">Ainda não tem conta? <a href="{% url 'signup' %}">Registe-se aqui</a>.</p>
+</div>
+{% endblock content %}

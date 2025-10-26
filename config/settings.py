@@ -39,7 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tasks.apps.TasksConfig',
+    'accounts'
 ]
+
+# Definições de Autenticação (Aponte para o nome da URL)
+LOGIN_REDIRECT_URL = 'task_list'  # Onde ir depois do login (sua lista de tarefas)
+LOGOUT_REDIRECT_URL = 'task_list' # Onde ir depois do logout
+LOGIN_URL = 'login'              # URL nomeada para o login (será definida abaixo)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -129,8 +135,7 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# URL para redirecionar após um login ou sucesso de formulário
-LOGIN_REDIRECT_URL = '/'
+
 
 LOGGING = {
     'version': 1,

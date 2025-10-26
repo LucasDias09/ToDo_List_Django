@@ -1,14 +1,13 @@
 {% extends "base.html" %}{% load static %} {% load i18n %} {% block title %}
 Lista de Tarefas {% endblock title %} {% block content %}
-
+{% if user.is_authenticated %}
 <div class="header-actions">
   <h1>Lista de Tarefas</h1>
   <a href="{% url 'task_create' %}" class="create-task-btn">
     Criar Nova Tarefa
   </a>
 </div>
-
-{% if tarefas %}
+ {% if tarefas %}
 <div class="container">
   <table>
     <thead>
@@ -57,5 +56,10 @@ Lista de Tarefas {% endblock title %} {% block content %}
 <p class="no-tasks">
   Ainda não há tarefas.
   <a href="{% url 'task_create' %}">Comece por criar uma!</a>
+</p>
+{% endif %} {% else %}
+<p class="no-tasks">
+  Por favor, <a href="{% url 'login' %}">inicie sessão</a> para ver suas
+  tarefas.
 </p>
 {% endif %} {% endblock content %}

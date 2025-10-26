@@ -21,8 +21,29 @@
               >Lista de Tarefas</a
             >
 
-            <a href="{% url 'contact_page' %}" class="nav-link"> Contactos </a>
-            <a href="{% url 'messages' %}" class="nav-link">Mensagens</a>
+            <!-- LÓGICA DE AUTENTICAÇÃO -->
+            {% if user.is_authenticated %}
+            <!-- Se o utilizador estiver logado, mostra o campo de boas-vindas -->
+            <span class="welcome-text">Olá, {{ user.username }}!</span>
+
+            <!-- SUBSTITUIR O LINK <a> POR ESTE FORMULÁRIO POST -->
+            <form
+              method="post"
+              action="{% url 'logout' %}"
+              style="display: inline"
+            >
+              {% csrf_token %}
+              <button type="submit" class="nav-link logout-btn">Sair</button>
+            </form>
+
+            {% else %}
+            <!-- Se não estiver logado, mostra Login e Registo -->
+            <a href="{% url 'login' %}" class="nav-link">Iniciar Sessão</a>
+
+            <a href="{% url 'signup' %}" class="nav-link cta-button">
+              Registar
+            </a>
+            {% endif %}
 
             <a href="/admin/" class="nav-link">Admin</a>
             {% endblock nav %}

@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 
 class Tarefa(models.Model):
@@ -9,6 +10,7 @@ class Tarefa(models.Model):
     completa = models.BooleanField(default=False)
     data_vencimento = models.DateTimeField(blank=True, null=True)
     ordem = models.PositiveIntegerField(default=0, blank=False, null=False) 
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     class Meta:
         # A nova ordenação padrão será pelo campo 'ordem'

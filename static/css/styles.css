@@ -397,3 +397,85 @@ li.address {
   text-align: center;
   margin-bottom: 20px;
 }
+/* ------------------------------------- */
+/* ESTILOS DE AUTENTICAÇÃO (Login/Signup) */
+/* ------------------------------------- */
+
+.auth-card {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.auth-card h2 {
+    color: #3f51b5;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #3f51b5;
+    outline: none;
+    box-shadow: 0 0 5px rgba(63, 81, 181, 0.3);
+}
+
+.error-text {
+    color: #f44336;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #303f9f;
+}
+
+.auth-link {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #777;
+}
+
+.auth-link a {
+    color: #3f51b5;
+    text-decoration: none;
+    font-weight: bold;
+}
